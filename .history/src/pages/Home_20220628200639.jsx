@@ -19,26 +19,23 @@ export function Home() {
   }
 
   useEffect(() => {
-    async function fetchData() {
-    const response = await fetch('https://api.github.com/users/luissempre')
-    const data = await response.json()
-        setUser({
-          name: data.name,
-          avatar: data.avatar_url
-        })
-    }
-    fetchData()
-  }, [])
+    fetch('https://api.github.com/users/luissempre').then(response => response.json)
+    .then(data => {
+
+    })
+  }, [students])
   return (
     <div className="flex items-center justify-center min-h-screen space-x-2">
-          <strong>{user.name}</strong>
-          <img className="w-16 h-16 rounded-full" src={user.avatar} alt="Img" />
+      <div>
+        <h1>Lista {student} </h1>
+    
         <input
           onChange={(e) => setStudent(e.target.value)}
           className="px-4 py-2 text-black bg-white rounded"
           type="text"
           placeholder="digite"
         />
+      </div>
       <div className="space-y-4">
         <button 
         className="px-4 py-2 font-bold bg-purple-500 rounded-full"

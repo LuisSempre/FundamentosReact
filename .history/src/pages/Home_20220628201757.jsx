@@ -31,14 +31,18 @@ export function Home() {
   }, [])
   return (
     <div className="flex items-center justify-center min-h-screen space-x-2">
+      <div>
+        <div className="flex items-center justify-center">
           <strong>{user.name}</strong>
           <img className="w-16 h-16 rounded-full" src={user.avatar} alt="Img" />
+        </div>
         <input
           onChange={(e) => setStudent(e.target.value)}
           className="px-4 py-2 text-black bg-white rounded"
           type="text"
           placeholder="digite"
         />
+      </div>
       <div className="space-y-4">
         <button 
         className="px-4 py-2 font-bold bg-purple-500 rounded-full"
